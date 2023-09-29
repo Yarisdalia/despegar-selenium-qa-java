@@ -6,7 +6,6 @@ import org.junit.Before;
 import org.junit.Test;
 import pom.WebBrowser;
 import pom.home.HomePage;
-import pom.vuelos.VuelosPage;
 
 public class OfertasTest extends TestCase {
 
