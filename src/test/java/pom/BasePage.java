@@ -10,6 +10,7 @@ import java.util.List;
 public class BasePage {
     //declaramos objeto webdriver
     public final WebDriver driver;
+    private By locator;
 
     //creamos el contructor de la clase
     public BasePage(WebDriver driver){

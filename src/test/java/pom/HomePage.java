@@ -2,7 +2,9 @@ package pom;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import pom.BasePage;
+
+import java.util.Iterator;
+import java.util.Set;
 
 public class HomePage extends BasePage {
 
@@ -61,9 +63,20 @@ public class HomePage extends BasePage {
     }
     public void navegarEnElSitioDe(){
         scroll(10000);
-        type("Chile",cambiarDePais);
+        type("Chile", cambiarDePais);
     }
     public String getUrl(){
         return getBrowserUrl();
+    }
+
+    // cambiar de contexto a la segunda ventana
+    public void changeToSecondWindowContext(){
+        Set<String> windowId = driver.getWindowHandles();    // get  window id of current window
+        Iterator<String> itererator = windowId.iterator();
+
+        String mainWinID = itererator.next();
+        String popupID = itererator.next();
+
+        driver.switchTo().window(popupID);
     }
 }
