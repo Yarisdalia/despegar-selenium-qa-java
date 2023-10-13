@@ -1,13 +1,12 @@
-package pom.vuelos;
-
 import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import pom.OfertasPage;
 import pom.WebBrowser;
-import pom.home.HomePage;
+import pom.HomePage;
 
-public class VuelosTest extends TestCase {
+public class OfertasTest extends TestCase {
 
     //declarar el web driver
     WebBrowser web;
@@ -15,7 +14,7 @@ public class VuelosTest extends TestCase {
     //declarar las paginas
     HomePage homePage;
 
-    VuelosPage vuelosPage;
+    OfertasPage ofertasPage;
 
     @Before
     public void setUp(){
@@ -23,16 +22,18 @@ public class VuelosTest extends TestCase {
         //instanciar la page
         homePage = new HomePage(web.getDriver());
         homePage.visit("https://www.despegar.com.uy/");
-        vuelosPage = new VuelosPage(web.getDriver());
+        ofertasPage = new OfertasPage(web.getDriver());
     }
+
 
     @Test
     public void test(){
         // agregar test
-        homePage.goToVuelos();
-        homePage.quitAllPopups();
-        vuelosPage.agendarVuelo();
-        assertTrue(vuelosPage.messageIsDisplay());
+        homePage.goToOfertas();
+        homePage.quitGooglePopup();
+        homePage.quitEntendiPopups();
+        ofertasPage.agendarPaqueteTuristico();
+        assertTrue(ofertasPage.messageIsDisplay());
     }
 
     @After

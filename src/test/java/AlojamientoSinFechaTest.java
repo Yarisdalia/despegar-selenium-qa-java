@@ -1,11 +1,10 @@
-package pom.alojamiento;
-
 import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import pom.WebBrowser;
-import pom.home.HomePage;
+import pom.AlojamientoPage;
+import pom.HomePage;
 
 public class AlojamientoSinFechaTest extends TestCase {
 

@@ -1,17 +1,18 @@
-package pom.home;
-
 import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import pom.WebBrowser;
+import pom.AlojamientoPage;
+import pom.HomePage;
 
-public class HomeTest extends TestCase {
+public class AlojamientoTest extends TestCase {
 
     //declarar el web driver
     WebBrowser web;
 
     //declarar las paginas
+    AlojamientoPage alojamientoPage;
     HomePage homePage;
 
     @Before
@@ -20,16 +21,17 @@ public class HomeTest extends TestCase {
         //instanciar la page
         homePage = new HomePage(web.getDriver());
         homePage.visit("https://www.despegar.com.uy/");
+        alojamientoPage = new AlojamientoPage(web.getDriver());
+
     }
 
     @Test
     public void test(){
         // agregar test
-        homePage.quitGooglePopup();
-        homePage.quitEntendiPopups();
-        homePage.navegarEnElSitioDe();
-
-        assertEquals("https://www.despegar.cl/",homePage.getUrl());
+        homePage.goToAlojamiento();
+        homePage.quitAllPopups();
+        alojamientoPage.agendarAlojamiento();
+        assertTrue(alojamientoPage.orderSelectIsDisplay());
     }
 
     @After

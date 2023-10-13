@@ -1,12 +1,5 @@
-package pom;
-
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
-import pom.alojamiento.AlojamientoSinFechaTest;
-import pom.alojamiento.AlojamientoTest;
-import pom.home.HomeTest;
-import pom.ofertas.OfertasTest;
-import pom.vuelos.VuelosTest;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({AlojamientoTest.class, AlojamientoSinFechaTest.class, VuelosTest.class, OfertasTest.class, HomeTest.class})

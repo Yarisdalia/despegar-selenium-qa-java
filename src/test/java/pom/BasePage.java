@@ -91,7 +91,7 @@ public class BasePage {
     // esperar en pantalla a un elemento
     public void waitElementAndClick(By locator) {
        try {
-           WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+           WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
            wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
        } catch (NoSuchElementException e){
            // El popup no estaba presente, puedes manejarlo aquí

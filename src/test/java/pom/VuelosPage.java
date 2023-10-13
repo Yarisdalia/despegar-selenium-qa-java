@@ -1,4 +1,4 @@
-package pom.vuelos;
+package pom;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -48,7 +48,7 @@ public class VuelosPage extends BasePage {
     }
 
     public boolean messageIsDisplay() {
-        waitForSeconds(7);
+        waitForSeconds(20);
         return isDisplayed(messagePreciosInDisplay);
     }
 }

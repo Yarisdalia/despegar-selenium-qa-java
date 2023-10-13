@@ -1,4 +1,4 @@
-package pom.alojamiento;
+package pom;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -83,6 +83,7 @@ public class AlojamientoPage extends BasePage {
     }
 
     public boolean messageIsDisplay() {
+        waitForSeconds(7);
         return isDisplayed(messageHotelesInDisplay);
     }
 }
