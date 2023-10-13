@@ -1,13 +1,11 @@
-package pom.ofertas;
-
 import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import pom.HomePage;
 import pom.WebBrowser;
-import pom.home.HomePage;
 
-public class OfertasTest extends TestCase {
+public class HomeTest extends TestCase {
 
     //declarar el web driver
     WebBrowser web;
@@ -15,26 +13,23 @@ public class OfertasTest extends TestCase {
     //declarar las paginas
     HomePage homePage;
 
-    OfertasPage ofertasPage;
 
     @Before
     public void setUp(){
         web = new WebBrowser(false);
         //instanciar la page
         homePage = new HomePage(web.getDriver());
-        homePage.visit("https://www.despegar.com.uy/");
-        ofertasPage = new OfertasPage(web.getDriver());
+        homePage.visit("https://sendcuba-client-next-pwa-x6xn32iivq-uc.a.run.app/");
     }
-
 
     @Test
     public void test(){
         // agregar test
-        homePage.goToOfertas();
         homePage.quitGooglePopup();
         homePage.quitEntendiPopups();
-        ofertasPage.agendarPaqueteTuristico();
-        assertTrue(ofertasPage.messageIsDisplay());
+        homePage.navegarEnElSitioDe();
+
+        assertEquals("https://sendcuba-client-next-pwa-x6xn32iivq-uc.a.run.app/",homePage.getUrl());
     }
 
     @After

@@ -10,6 +10,7 @@ import java.util.List;
 public class BasePage {
     //declaramos objeto webdriver
     public final WebDriver driver;
+    private By locator;
 
     //creamos el contructor de la clase
     public BasePage(WebDriver driver){
@@ -91,7 +92,7 @@ public class BasePage {
     // esperar en pantalla a un elemento
     public void waitElementAndClick(By locator) {
        try {
-           WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+           WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
            wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
        } catch (NoSuchElementException e){
            // El popup no estaba presente, puedes manejarlo aquí
